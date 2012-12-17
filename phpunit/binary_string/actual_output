@@ -1,0 +1,24 @@
+reactor% time php -d include_path=.:/home/pie/apps/git-phpunit-bundle:/home/pie/apps/git-phpbb3-dependencies \
+~pie/apps/git-phpunit-bundle/phpunit.php ~pie/apps/phpunit-test/test.php
+PHPUnit @package_version@ by Sebastian Bergmann.
+
+F
+
+Time: 0 seconds, Memory: 3.50Mb
+
+There was 1 failure:
+
+1) StackTest::testPushAndPop
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-Binary String: 0x546869732069732061207465787420737472696e672e204d6f7374206f6620697420697320746578742e2042757420697420696e636c75646573203620556e69636f646520636861726163746572733a20e2809920c2bb20e2809c20e2809d20e280a6
++'none of those'
+
+/home/pie/apps/phpunit-test/test.php:11
+/home/pie/apps/git-phpunit-bundle/phpunit.php:44
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+php -d  ~pie/apps/git-phpunit-bundle/phpunit.php   0.06s user 0.02s system 98% cpu 0.083 total
