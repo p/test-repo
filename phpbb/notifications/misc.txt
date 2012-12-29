@@ -1,0 +1,1 @@
+git log --oneline upstream/develop...take2|awk '{print $1}'|tail -r>clist

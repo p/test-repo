@@ -1,0 +1,3 @@
+phpBB/includes/user_loader.php
+tests/user/fixtures/user_loader.xml
+tests/user/user_loader.php
