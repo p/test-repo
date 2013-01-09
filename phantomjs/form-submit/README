@@ -1,0 +1,13 @@
+Instructions
+
+1. npm install
+2. coffee server.coffee&
+3. phantomjs client.coffee
+
+Last line of output from client.coffee should be:
+
+h=hv&s=sv
+
+but it is:
+
+h=hv
