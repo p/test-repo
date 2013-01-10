@@ -1,0 +1,17 @@
+# We should probably fix these
+asi: true
+eqnull: true
+smarttabs: true
+
+# These are probably too much work to fix
+# "document.write can be a form of eval."
+evil: true
+
+# These are needed
+browser: true
+
+# Our globals
+globals:
+  phpbb: false
+
+#maxerr: 5000000
