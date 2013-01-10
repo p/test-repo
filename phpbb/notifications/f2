@@ -66,3 +66,6 @@ phpBB/report.php
 phpBB/styles/prosilver/template/ucp_prefs_personal.html
 phpBB/styles/subsilver2/template/ucp_prefs_personal.html
 tests/privmsgs/delete_user_pms_test.php
+phpBB/includes/functions_display.php
+phpBB/language/en/email/notifications/
+phpBB/includes/notification/type/report.php

@@ -50,3 +50,7 @@ tests/mock/notifications_notification_manager.php
 tests/notification/ext/test/notification/type/test.php
 tests/notification/fixtures/notification.xml
 tests/notification/notification.php
+phpBB/includes/notifications/service.php
+phpBB/common.php
+phpBB/language/en/email/notification.txt
+tests/test_framework/phpbb_test_case_helpers.php
