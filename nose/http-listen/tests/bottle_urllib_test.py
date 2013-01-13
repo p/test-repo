@@ -2,9 +2,10 @@ import socket
 import threading
 import time
 import unittest
+import urllib
 import bottle
 
-port = 9312
+port = 9313
 
 class ServerThread(threading.Thread):
     def run(self):
@@ -39,13 +40,13 @@ wait_for_server()
 
 class FailingTest(unittest.TestCase):
     def test_a(self):
-        socket.create_connection(('127.0.0.1', port), 1)
+        urllib.urlopen('http://127.0.0.1:%d' % port).read()
     
     def test_b(self):
-        socket.create_connection(('127.0.0.1', port), 1)
+        urllib.urlopen('http://127.0.0.1:%d' % port).read()
     
     def test_c(self):
-        socket.create_connection(('127.0.0.1', port), 1)
+        urllib.urlopen('http://127.0.0.1:%d' % port).read()
 
 if __name__ == '__main__':
     unittest.main()
