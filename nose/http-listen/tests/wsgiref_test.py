@@ -9,7 +9,7 @@ port = 9312
 class ServerThread(threading.Thread):
     def run(self):
         httpd = make_server('', port, demo_app)
-        print "Serving HTTP on port %d..." % port
+        print("Serving HTTP on port %d..." % port)
 
         # Respond to requests until process is killed
         httpd.serve_forever()
