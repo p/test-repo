@@ -7,9 +7,11 @@ port = 9311
 
 class ServerThread(threading.Thread):
     def run(self):
-        # Having import here prevents the app from listening.
-        # Note that socket is also imported globally.
-        import socket
+        # Having an import here prevents the app from listening.
+        # Any import will do, it does not have to be network-related.
+        # The module could have been imported already or not,
+        # makes no difference.
+        import time
         
         s = socket.socket()
         s.bind(('127.0.0.1', port))
