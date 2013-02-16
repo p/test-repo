@@ -1,15 +1,16 @@
-import webracer
+import urllib
 import threading
 
 ok = 0
 failed = 0
 lock = threading.Lock()
 
-def req(s):
+def req():
     global ok, failed, lock
-
-    s.get('http://func/posting.php?mode=post&f=2')
-    if 'Subject:' in s.response.body:
+    
+    f = urllib.urlopen('http://func/posting.php?mode=post&f=2')
+    body = f.read()
+    if 'Subject:' in body:
         ok += 1
     else:
         failed += 1
@@ -21,9 +22,8 @@ def req(s):
         lock.release()
 
 def reqmany():
-    s = webracer.Session()
     for i in range(100):
-        req(s)
+        req()
 
 threads = []
 for i in range(10):
