@@ -37,3 +37,15 @@ for thread in threads:
     thread.join()
 
 # ~ 1 in 7 checks fail
+
+# Requires DEBUG to be on in phpbb.
+
+# The cause is template engine writes compiled code to file and then
+# reads code back from file for evaluation, on each request.
+# Since there is no locking for the read path, given concurrent writes
+# to the same file eventually the read path will catch the file when
+# it is being written to.
+#
+# Solutions:
+# 1. do not read compiled code from file.
+# 2. move compiled file in place (unix only but probably a better solution)
