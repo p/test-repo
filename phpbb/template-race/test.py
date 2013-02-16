@@ -1,6 +1,8 @@
 import urllib
 import threading
 
+url = 'http://func/posting.php?mode=post&f=2'
+
 ok = 0
 failed = 0
 lock = threading.Lock()
@@ -8,7 +10,7 @@ lock = threading.Lock()
 def req():
     global ok, failed, lock
     
-    f = urllib.urlopen('http://func/posting.php?mode=post&f=2')
+    f = urllib.urlopen(url)
     body = f.read()
     if 'Subject:' in body:
         ok += 1
