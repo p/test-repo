@@ -23,3 +23,4 @@ c1.run ->
   c2.run ->
     @test.done()
     c1.test.done()
+    c1.exit()
