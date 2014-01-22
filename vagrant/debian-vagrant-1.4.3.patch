@@ -1,0 +1,39 @@
+diff -ru vagrant-1.2.2/debian/changelog vagrant-1.4.3/debian/changelog
+--- vagrant-1.2.2/debian/changelog	2013-07-06 15:47:28.000000000 -0400
++++ vagrant-1.4.3/debian/changelog	2014-01-21 17:39:08.223981481 -0500
+@@ -1,3 +1,9 @@
++vagrant (1.4.3-1) unstable; urgency=low
++
++  * New upstream release (Closes: #735150, #732155)
++
++ -- Oleg Pudeyev <oleg@bsdpower.com>  Tue, 21 Jan 2014 17:00:00 -0500
++
+ vagrant (1.2.2-1) unstable; urgency=low
+ 
+   * New upstream release (Closes: #697280)
+diff -ru vagrant-1.2.2/debian/control vagrant-1.4.3/debian/control
+--- vagrant-1.2.2/debian/control	2013-07-06 15:47:28.000000000 -0400
++++ vagrant-1.4.3/debian/control	2014-01-21 18:02:18.302874510 -0500
+@@ -21,10 +21,12 @@
+          ruby-log4r (>= 1.1.9),
+          ruby-net-scp (>= 1.1.0),
+          ruby-net-ssh (>= 1:2.6.6),
++         ruby-net-ssh (<< 1:2.8.0),
+          ruby1.9.1,
+          ${misc:Depends},
+          ${shlibs:Depends}
+-Recommends: virtualbox (>= 4.0)
++Recommends: virtualbox (>= 4.0),
++            virtualbox (<< 4.4)
+ Description: Tool for building and distributing virtualized development environments
+  This package provides the tools to create and configure lightweight,
+  reproducible, and portable virtual environments.
+diff -ru vagrant-1.2.2/debian/require-rubygems.overrides vagrant-1.4.3/debian/require-rubygems.overrides
+--- vagrant-1.2.2/debian/require-rubygems.overrides	2013-07-06 15:47:28.000000000 -0400
++++ vagrant-1.4.3/debian/require-rubygems.overrides	2014-01-21 17:46:32.606185053 -0500
+@@ -1,4 +1,5 @@
+ ---
++- debian/vagrant/usr/lib/ruby/vendor_ruby/vagrant.rb
+ - debian/vagrant/usr/share/vagrant/plugins/commands/plugin/action/install_gem.rb
+ - debian/vagrant/usr/share/vagrant/plugins/commands/plugin/action/license_plugin.rb
+ - debian/vagrant/usr/share/vagrant/plugins/commands/plugin/action/list_plugins.rb
