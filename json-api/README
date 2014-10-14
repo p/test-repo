@@ -1,0 +1,59 @@
+Create a web service that consumes two separate streams of increasing
+integers and can be queried to return the next element of the "merged"
+list, maintaining increasing order. (In place of "A" and "B" below, please
+use the given stream keys.)
+
+
+For example, if successive calls to streams "A" and "B" produce:
+
+
+
+         Stream      1st call 2nd call  3rd call
+
+         "A"         2        3         8
+
+         "B"         4        5         6
+
+
+
+then calls to your service should yield:
+
+
+
+         1st call   2nd call 3rd call  4th call  5th call 6th call
+
+         2          3        4         5         6        8
+
+
+
+
+Streams "A" & "B" may be retrieved by making GET requests to
+
+        https://api.datasource.com/next/A
+        https://api.datasource.com/next/B
+
+where each response is a JSON payload formatted like so:
+
+        {
+                 "last": <the stream's last value>,
+                 "current": <the stream's current value>,
+                 "stream": <the stream's name>
+        }
+
+
+We should be able to query your server at
+
+        /quiz/merge?stream1=A&stream2=B
+
+and responses should be formatted like so (e.g., the second call above):
+
+        {
+                 "last": 2,
+                 "current": 3
+        }
+
+
+You may use a web framework of your choice, and do not need to actually
+deploy the server. Just send over your code and some brief instructions
+so we can get it up and running locally.
+
